@@ -15,7 +15,7 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - **GitHub API**: 관련 PoC 링크를 검색하기 위한 소스.
 
 ## 사용 예시
-![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/f5acfd0d57b6bdaf281db2fe72885c419e7367bf/images/search.png).
+![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/f5acfd0d57b6bdaf281db2fe72885c419e7367bf/images/search.png)
 *사용자가 CVE ID를 입력한 후 출력된 결과 화면*
 
 
@@ -43,7 +43,7 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
    python run.py
 
 4. **127.0.0.1:5000 Home Page 접속 및 CVE 입력 (CVE-2025-0282)**
-- ![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/e7bea043499911783845d15bcade2dd95ed3a5cf/images/home.png).
+- ![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/e7bea043499911783845d15bcade2dd95ed3a5cf/images/home.png)
 
 4. **가상환경 종료**
    ```bash
