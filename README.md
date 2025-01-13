@@ -23,16 +23,22 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - Python 3.12.4
 - Flask 3.1.0
 
-## 설치 및 실행 방법
-
-1. **가상환경 실행 및 활성화**
+## 실행 방법
+1. **프로젝트 폴더 이동**
    ```bash
    # 저장 폴더로 이동
-   cd \저장폴더\cvegg
+   cd cvegg
    
-   # 가상환경 실행
+2. **가상환경 실행**
+   ```bash
    .\.venv\Scripts\activate
-   
-   # Flask 앱 실행
+
+3. **flask 실행**
+   ```bash
    python run.py
+
+4. **가상환경 종료**
+   ```bash
+   deactivate
+   
 
