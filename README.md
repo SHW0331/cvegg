@@ -27,12 +27,19 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 ## 실행 환경
 - Python 3.12.4
 - Flask 3.1.0
+- requests 2.32.3
 
 ## 실행 방법
 1. **프로젝트 폴더 이동**
    ```bash
    # 저장 폴더로 이동
    cd cvegg
+
+2. **api key 설정**
+   -  
+   ```bash
+   # \cvegg\app\utils\nvd.py
+   
    
 2. **가상환경 실행**
    ```bash
@@ -43,7 +50,7 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
    python run.py
 
 4. **127.0.0.1:5000 Home Page 접속 및 CVE 입력 (CVE-2025-0282)**
-- ![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/e7bea043499911783845d15bcade2dd95ed3a5cf/images/home.png)
+   - ![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/e7bea043499911783845d15bcade2dd95ed3a5cf/images/home.png)
 
 4. **가상환경 종료**
    ```bash
