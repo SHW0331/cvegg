@@ -19,7 +19,7 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
    ```bash
    git clone https://github.com/SHW0331/cvegg.git
 
-## 요구 사항
+## 실행 환경
 - Python 3.12.4
 - Flask 3.1.0
 
