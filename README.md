@@ -36,7 +36,7 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
    cd cvegg
 
 2. **api key 설정**
-   ![NVD api key 설정](https://github.com/SHW0331/cvegg/blob/ee68c7d01d106e8555668bccb7ea05d013da0985/images/code.png)
+![NVD api key 설정](https://github.com/SHW0331/cvegg/blob/ee68c7d01d106e8555668bccb7ea05d013da0985/images/code.png)
    ```bash
    # \cvegg\app\utils\nvd.py
 
