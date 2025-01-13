@@ -29,6 +29,12 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - Flask 3.1.0
 - requests 2.32.3
 
+## 필수 라이브러리 설치
+1. Flask 애플리케이션 실행 전, 필수 라이브러리를 설치
+   ```bash
+   pip install flask
+   pip install requests
+
 ## 실행 방법
 1. **프로젝트 폴더 이동**
    ```bash
