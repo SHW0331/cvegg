@@ -41,18 +41,18 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
    # \cvegg\app\utils\nvd.py
    
    
-2. **가상환경 실행**
+3. **가상환경 실행**
    ```bash
    .\.venv\Scripts\activate
 
-3. **flask 실행**
+4. **flask 실행**
    ```bash
    python run.py
 
-4. **127.0.0.1:5000 Home Page 접속 및 CVE 입력 (CVE-2025-0282)**
+5. **127.0.0.1:5000 Home Page 접속 및 CVE 입력 (CVE-2025-0282)**
    ![cvegg 실행 화면](https://github.com/SHW0331/cvegg/blob/e7bea043499911783845d15bcade2dd95ed3a5cf/images/home.png)
 
-4. **가상환경 종료**
+6. **가상환경 종료**
    ```bash
    deactivate
 
