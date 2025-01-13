@@ -1,0 +1,167 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}CVEgg{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Left Pane -->
+    <div class="left-pane">
+        <div class="data-box">
+            <h2>Vulnerability Details</h2>
+            <p><strong>CVE ID:</strong> {{ data }}</p>
+            <p><strong>Published Date:</strong> N/A</p>
+            <p><strong>Description:</strong> N/A</p>
+            <h3>Full JSON Data:</h3>
+            <pre id="json-data">N/A</pre>
+            <div class="button-group">
+                <button id="expand-button">Expand</button>
+                <button id="copy-button">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Pane -->
+    <div class="right-pane">
+        <div class="section" id="poc-section">
+            <h2>Related PoC</h2>
+            <p>No PoC data available yet.</p>
+        </div>
+        <!-- <div class="section" id="cve-pattern-section">
+            <h3>CVE Patterns & Articles</h3>
+            <p>No CVE pattern data available yet.</p>
+        </div> -->
+    </div>
+</div>
+
+    <script>
+        // JavaScript to handle Expand/Collapse and Copy functionality
+        const jsonPre = document.getElementById('json-data');
+        const expandButton = document.getElementById('expand-button');
+        const copyButton = document.getElementById('copy-button');
+        let isExpanded = false;
+
+        // Expand/Collapse JSON
+        expandButton.addEventListener('click', () => {
+            if (isExpanded) {
+                jsonPre.style.maxHeight = '300px';
+                expandButton.textContent = 'Expand';
+            } else {
+                jsonPre.style.maxHeight = '100%';
+                expandButton.textContent = 'Collapse';
+            }
+            isExpanded = !isExpanded;
+        });
+
+        // Copy JSON to Clipboard
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(jsonPre.textContent).then(() => {
+                alert('JSON copied to clipboard!');
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        });
+    </script>
+    
+    <style>
+        /* Container for main content */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: row; /* Arrange left and right panels side by side */
+        }
+
+        /* Left Panel */
+        .left-pane {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Right Panel */
+        .right-pane {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data-box {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .data-box strong {
+            color : #4e88e2;
+        }
+
+        .data-box h3 {
+            color : #4e88e2;
+        }
+
+        .data-box h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #ff5722; /* Highlight color */
+        }
+
+        .data-box pre {
+            background-color: #2b2b2b;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 300px; /* Initial collapsed height */
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .button-group {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            background-color: #ff5722;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button-group button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Right Pane Sections */
+        .section {
+            flex: 1;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #4caf50;
+        }
+
+        .section p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .poc_title {
+            color: #4e88e2;
+        }
+
+        .poc_link {
+            color: #ff5722;
+        }
+
+    </style>
+{% endblock %}

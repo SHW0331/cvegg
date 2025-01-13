@@ -1,0 +1,35 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}CVEgg{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>CVE.gg</h2>
+    <form class="search-bar" action="/report" method="post">
+        <input type="text" name="cve_num" placeholder="Search CVEs... (CVE-2024-1234)" required>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<script>
+    // JavaScript for client-side validation
+    document.getElementById('cve-form').addEventListener('submit', function(event) {
+        const cveInput = document.getElementById('cve-input').value;
+        
+        // RegExp to validate CVE format (CVE-YYYY-NNNN)
+        const cvePattern = /^CVE-\d{4}-\d{4,}$/;
+
+        if (!cvePattern.test(cveInput)) {
+            // Prevent form submission
+            event.preventDefault();
+
+            // Log to console and show alert
+            console.error("Invalid CVE format. Input must match CVE-YYYY-NNNN.");
+            alert("Invalid CVE format. Please enter a valid CVE (e.g., CVE-2024-1234).");
+        } else {
+            // Input is valid, allow form submission
+            console.log("Valid CVE format:", cveInput);
+        }
+    });
+</script>
+{% endblock %}
