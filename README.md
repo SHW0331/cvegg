@@ -14,6 +14,9 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - **NVD API**: CVE 정보를 제공하는 데이터 소스.
 - **GitHub API**(선택): 관련 PoC 링크를 검색하기 위한 소스.
 
+## 사용 예시
+
+
 ## 사용 방법
 1. 리포지토리를 클론합니다:
    ```bash
