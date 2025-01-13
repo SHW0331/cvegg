@@ -48,5 +48,4 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 4. **가상환경 종료**
    ```bash
    deactivate
-   
 
