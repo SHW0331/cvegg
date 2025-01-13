@@ -15,6 +15,8 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - **GitHub API**: 관련 PoC 링크를 검색하기 위한 소스.
 
 ## 사용 예시
+![cvegg 실행 화면]([https://raw.githubusercontent.com/SHW0331/cvegg/main/images/flask-run.png](https://github.com/SHW0331/cvegg/blob/846c395e58b77572487e1b5692cd81408cc104f3/images/home.png))  
+*Flask 앱이 실행 중인 터미널 화면 예시*
 
 
 ## 사용 방법
