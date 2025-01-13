@@ -9,10 +9,10 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 - **웹 인터페이스**: Flask 프레임워크를 활용하여 직관적이고 간단한 웹 UI를 제공합니다.
 
 ## 사용 기술
-- **Python**: 핵심 로직과 API 연동에 사용.
+- **Python**: API 연동에 사용.
 - **Flask**: 웹 인터페이스 구축에 사용.
 - **NVD API**: CVE 정보를 제공하는 데이터 소스.
-- **GitHub API**(선택): 관련 PoC 링크를 검색하기 위한 소스.
+- **GitHub API**: 관련 PoC 링크를 검색하기 위한 소스.
 
 ## 사용 예시
 
