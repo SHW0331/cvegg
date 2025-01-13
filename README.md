@@ -18,3 +18,21 @@ NVD(National Vulnerability Database) API를 활용하여 사용자가 입력한 
 1. 리포지토리를 클론합니다:
    ```bash
    git clone https://github.com/SHW0331/cvegg.git
+
+## 요구 사항
+- Python 3.12.4
+- Flask 3.1.0
+
+## 설치 및 실행 방법
+
+1. **가상환경 실행 및 활성화**
+   ```bash
+   # 저장 폴더로 이동
+   cd \저장폴더\cvegg
+   
+   # 가상환경 실행
+   .\.venv\Scripts\activate
+   
+   # Flask 앱 실행
+   python run.py
+
