@@ -3,33 +3,107 @@
 {% block title %}CVEgg{% endblock %}
 
 {% block content %}
+
 <div class="container">
     <h2>CVE.gg</h2>
-    <form class="search-bar" action="/report" method="post">
-        <input type="text" name="cve_num" placeholder="Search CVEs... (CVE-2024-1234)" required>
-        <button type="submit">Search</button>
-    </form>
+    <div class="search-bar">
+        <select id="searchType" onchange="toggleForm(this)">
+            <option value="cve">CVE</option>
+            <option value="keyword">Keyword</option>
+        </select>
+        
+        <form id="cveForm" action="/report" method="post" style="display: block;">
+            <input type="text" name="cve_num" placeholder="Search CVEs... (CVE-2024-1234)" required>
+            <button type="submit">Search</button>
+        </form>
+        
+        <form id="keywordForm" action="/keyword" method="post" style="display: none;">
+            <input type="text" name="keyword_name" placeholder="Search Keywords..." required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
 </div>
 
 <script>
-    // JavaScript for client-side validation
-    document.getElementById('cve-form').addEventListener('submit', function(event) {
-        const cveInput = document.getElementById('cve-input').value;
-        
-        // RegExp to validate CVE format (CVE-YYYY-NNNN)
-        const cvePattern = /^CVE-\d{4}-\d{4,}$/;
-
-        if (!cvePattern.test(cveInput)) {
-            // Prevent form submission
-            event.preventDefault();
-
-            // Log to console and show alert
-            console.error("Invalid CVE format. Input must match CVE-YYYY-NNNN.");
-            alert("Invalid CVE format. Please enter a valid CVE (e.g., CVE-2024-1234).");
+    function toggleForm(select) {
+        const cveForm = document.getElementById('cveForm');
+        const keywordForm = document.getElementById('keywordForm');
+        if (select.value === 'keyword') {
+            cveForm.style.display = 'none';
+            keywordForm.style.display = 'block';
         } else {
-            // Input is valid, allow form submission
-            console.log("Valid CVE format:", cveInput);
+            cveForm.style.display = 'block';
+            keywordForm.style.display = 'none';
         }
-    });
+    }
 </script>
+
+<style>
+/* Search Bar Styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between select and input */
+    width: 100%;
+    max-width: 600px; /* 충분한 공간 확보 */
+    margin: 20px 0;
+}
+
+.search-bar select {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.search-bar select:hover {
+    background-color: #252525;
+}
+
+.search-bar form {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: 1px solid #333;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px; /* 요청하신 300px로 설정 */
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #888;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #357abd;
+}
+</style>
+
 {% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %}CVEgg{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="left-pane">
+        <div class="data-box">
+            <h2>Vulnerability Keyword</h2>
+            <p><strong>CVE ID:</strong> {{ data.cve_id }}</p>
+            <p><strong>Published Date:</strong> {{ data.published }}</p>
+            <p><strong>Description:</strong> {{ data.descriptions_en }}</p>
+        </div>
+    </div>
+</div>
+
+    <script>
+    </script>
+    
+    <style>
+        /* Container for main content */
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: row; /* Arrange left and right panels side by side */
+        }
+
+        /* Left Panel */
+        .left-pane {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            border-right: 1px solid #444;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Right Panel */
+        .right-pane {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data-box {
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .data-box strong {
+            color : #4e88e2;
+        }
+
+        .data-box h3 {
+            color : #4e88e2;
+        }
+
+        .data-box h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #ff5722; /* Highlight color */
+        }
+
+        .data-box pre {
+            background-color: #2b2b2b;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            max-height: 300px; /* Initial collapsed height */
+            transition: max-height 0.3s ease-in-out;
+        }
+
+        .button-group {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            background-color: #ff5722;
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .button-group button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Right Pane Sections */
+        .section {
+            flex: 1;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #4caf50;
+        }
+
+        .section p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        .poc_title {
+            color: #4e88e2;
+        }
+
+        .poc_link {
+            color: #ff5722;
+        }
+
+    </style>
+{% endblock %}
