@@ -7,25 +7,18 @@
     <!-- Right Pane -->
     <div class="right-pane">
         <div class="section" id="poc-section">
-            <h2>Keyword : {{name}} ({{data_len}} items)</h2>
-            {% if data %}
+            <h2>Keyword : {{name}} (None)</h2>
                 <ul>
-                    {% for item in data %}
                         <li>
-                            <strong class="keyword_title">CVE: <a href="/report?cve={{ item[0] }}" id="cve-link">{{ item[0] }}
+                            <strong class="keyword_title">CVE: <a href="#" id="cve-link">None
                             </a></strong> 
-                                
                             <br>
-                            <strong class="keyword_title">Description:</strong> {{ item[1] }}<br>
-                            <strong class="keyword_title">Published:</strong> {{ item[2] }}<br>
+                            <strong class="keyword_title">Description:</strong> None <br>
+                            <strong class="keyword_title">Published:</strong> None <br>
                         </li>
                         <hr>
                         <br>
-                    {% endfor %}
                 </ul>
-            {% else %}
-                <p>No Keyword data.</p>
-            {% endif %}
         </div>
     </div>
 </div>    
